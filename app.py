@@ -255,11 +255,5 @@ def check_session():
 #    init_db()
 #    app.run(debug=True, host='0.0.0.0', port=5000)
 
-#render用の実行コマンド
-app = Flask(__name__)
-def init_db():
-    pass 
-with app.app_context():
-    init_db()
-if __name__ == '__main__':
-    app.run()
+#render用の実行コマンド。gunicornで実行するので、これだけでOKらしい。
+init_db()
