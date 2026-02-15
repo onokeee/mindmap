@@ -250,6 +250,16 @@ def check_session():
         })
     return jsonify({'logged_in': False})
 
-if __name__ == '__main__':
+#LAN用の実行コマンド
+#if __name__ == '__main__':
+#    init_db()
+#    app.run(debug=True, host='0.0.0.0', port=5000)
+
+#render用の実行コマンド
+app = Flask(__name__)
+def init_db():
+    pass 
+with app.app_context():
     init_db()
-    app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    app.run()
